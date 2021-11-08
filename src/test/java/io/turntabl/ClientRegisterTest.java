@@ -60,5 +60,16 @@ public class ClientRegisterTest extends TestCase {
     }
 
     public void testGetCountOfAllClientsAtEveryServiceLevel() {
+        listOfCorporateClients.add(corporateClientOne);
+        listOfCorporateClients.add(corporateClientTwo);
+        listOfCorporateClients.add(corporateClientThree);
+
+        listOfPrivateClients.add(privateClientOne);
+        listOfPrivateClients.add(privateClientTwo);
+        listOfPrivateClients.add(privateClientThree);
+
+        ClientRegister register = new ClientRegister(listOfCorporateClients, listOfPrivateClients);
+
+
     }
 }
