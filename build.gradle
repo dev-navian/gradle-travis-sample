@@ -7,7 +7,7 @@ plugins {
 group 'io.turntabl'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+sourceCompatibility = 10
 
 repositories {
     mavenCentral()
@@ -33,3 +33,6 @@ tasks.startScripts {
 application {
     mainClassName = 'io.turntabl.TCMS'
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8

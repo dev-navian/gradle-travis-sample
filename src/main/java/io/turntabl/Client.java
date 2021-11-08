@@ -49,4 +49,6 @@ public abstract class Client {
                 ", serviceLevel=" + serviceLevel +
                 '}';
     }
+
+    public abstract String getClientName();
 }

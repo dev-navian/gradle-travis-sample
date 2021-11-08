@@ -6,4 +6,9 @@ public class PrivateClient extends Client  {
         super(name, id, serviceLevel);
     }
 
+    @Override
+    public String getClientName() {
+        return getName();
+    }
+
 }
