@@ -7,8 +7,8 @@ import java.util.stream.Stream;
 
 public class ClientRegister {
 
-    private List<Client> corporateClients = new ArrayList<>();
-    private List<Client> privateClients = new ArrayList<>();
+    private List<Client> corporateClients;
+    private List<Client> privateClients;
 
     public ClientRegister(List<Client> corporateClients, List<Client> privateClients) {
         this.corporateClients = corporateClients;
@@ -39,16 +39,14 @@ public class ClientRegister {
     }
 
     // a count of all clients at every service level
-    public void getCountOfAllClientsAtEveryServiceLevel() {
+    public String getCountOfAllClientsAtEveryServiceLevel() {
         int goldClientsCount = (int) getAllClientsList().stream().filter(client -> client.getServiceLevel().equals(ServiceLevel.Gold)).count();
         int platinumClientsCount = (int) getAllClientsList().stream().filter(client -> client.getServiceLevel().equals(ServiceLevel.Platinum)).count();
         int premiumClientsCount = (int) getAllClientsList().stream().filter(client -> client.getServiceLevel().equals(ServiceLevel.Premium)).count();
 
-//        List<Integer> clientsRecordCount
-        System.out.println("There are " + goldClientsCount + " clients at the gold service level");
-        System.out.println("There are " + platinumClientsCount + " clients at the platinum service level");
-        System.out.println("There are " + premiumClientsCount + " clients at the premium service level");
-
+        return "There are " + goldClientsCount + " gold clients, "
+                + platinumClientsCount + " platinum clients and "
+                + premiumClientsCount + " premium clients in our catalogue";
     }
 
 }
